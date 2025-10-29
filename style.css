@@ -625,6 +625,99 @@ body {
     text-align: center;
     padding: 2rem 0;
 }
+/* Career Pathway Section */
+.career-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.pathway-intro {
+    text-align: center;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    color: var(--text-dark);
+}
+
+.pathway-items {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.pathway-item {
+    display: flex;
+    gap: 2rem;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--red);
+    transition: transform 0.3s ease;
+}
+
+.pathway-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.pathway-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    background: var(--navy-blue);
+    color: var(--white);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.pathway-details {
+    flex: 1;
+}
+
+.pathway-details h3 {
+    color: var(--navy-blue);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.pathway-details p {
+    color: var(--text-light);
+    line-height: 1.7;
+}
+
+.pathway-conclusion {
+    background: var(--light-gray);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    font-style: italic;
+    border-top: 4px solid var(--navy-blue);
+}
+
+.pathway-conclusion p {
+    color: var(--text-dark);
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Responsive adjustments for Career Pathway */
+@media (max-width: 768px) {
+    .pathway-item {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+    
+    .pathway-number {
+        align-self: center;
+    }
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
