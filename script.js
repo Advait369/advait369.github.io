@@ -16,11 +16,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 window.addEventListener('scroll', function() {
     const navbar = document.querySelector('.navbar');
     if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.background = 'rgba(255, 255, 255, 0.98)';
         navbar.style.backdropFilter = 'blur(10px)';
     } else {
-        navbar.style.background = 'var(--white)';
-        navbar.style.backdropFilter = 'none';
+        navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+        navbar.style.backdropFilter = 'blur(10px)';
     }
 });
 
@@ -47,13 +47,32 @@ document.querySelectorAll('.section').forEach(section => {
     observer.observe(section);
 });
 
-// Project card hover effects
+// Add animation to project cards
 document.querySelectorAll('.project-card').forEach(card => {
     card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-10px) scale(1.02)';
+        this.style.transform = 'translateY(-10px)';
     });
     
     card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
+        this.style.transform = 'translateY(0)';
     });
+});
+
+// Add current year to footer
+document.addEventListener('DOMContentLoaded', function() {
+    const yearSpan = document.querySelector('.footer p');
+    if (yearSpan) {
+        const currentYear = new Date().getFullYear();
+        yearSpan.innerHTML = `&copy; ${currentYear} Advait Burande. All rights reserved.`;
+    }
+});
+
+// Add loading animation
+window.addEventListener('load', function() {
+    document.body.style.opacity = '0';
+    document.body.style.transition = 'opacity 0.5s ease';
+    
+    setTimeout(function() {
+        document.body.style.opacity = '1';
+    }, 100);
 });
